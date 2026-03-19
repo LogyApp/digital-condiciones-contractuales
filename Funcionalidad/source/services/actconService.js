@@ -1,6 +1,6 @@
 import pool from '../config/database.connection.js';
 
-const getActcon = async () => {
+const getActcon = async (identificacion) => {
     try {
         const [rows] = await pool.query(`
             SELECT 
@@ -9,13 +9,11 @@ const getActcon = async () => {
                 da.trabajador,
                 da.fecha_firma,
                 da.url_pdf,
-                dh.firma_url,
-                dh.primer_nombre,
-                dh.primer_apellido,
-                dh.segundo_apellido
+                dh.firma_url
             FROM Digital_ACTCON da
             LEFT JOIN Dynamic_hv_aspirante dh ON da.identificacion = dh.identificacion
-        `);
+            WHERE da.identificacion = ?
+        `, [identificacion]);
         return rows;
     } catch (error) {
         console.error('ERROR en getActcon:', error.message);

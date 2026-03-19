@@ -129,21 +129,28 @@ const firmadorColab = new Firmador('firmaColaborador');
 const firmadorAnalista = new Firmador('firmaAnalista', true);
 
 const cargarDatosActcon = async () => {
-    const res = await fetch(`${API_BASE}/actcon`);
-    const json = await res.json();
-    console.log('Respuesta actcon:', json);
-    const actcon = json.data[0];
-    console.log('actcon[0]:', actcon);
-    console.log('firma_url:', actcon?.firma_url);
+    const params = new URLSearchParams(window.location.search);
+    const identificacion = params.get('id');
 
-    if (!actcon) return;
+    if (!identificacion) {
+        alert('No se encontró identificación en la URL.');
+        return;
+    }
+
+    const res = await fetch(`${API_BASE}/actcon?identificacion=${identificacion}`);
+    const json = await res.json();
+    const actcon = json.data[0];
+
+    if (!actcon) {
+        alert('No se encontró el registro para esta identificación.');
+        return;
+    }
 
     document.getElementById('nombreColaborador').textContent = actcon.trabajador;
     document.getElementById('identificacionColaborador').textContent = actcon.identificacion;
 
     if (actcon.firma_url) {
         const urlProxy = convertirUrlProxy(actcon.firma_url);
-        console.log('URL proxy:', urlProxy);
         const img = new Image();
         img.crossOrigin = 'anonymous';
         img.onerror = (e) => console.error('Error cargando firma:', e);
@@ -152,8 +159,6 @@ const cargarDatosActcon = async () => {
             firmadorColab.firmaPrecargada = true;
         };
         img.src = urlProxy;
-    } else {
-        console.warn('firma_url viene null o vacío');
     }
 };
 
