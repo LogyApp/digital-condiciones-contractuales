@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:8080/api';
+const API_BASE = 'https://digital-condiciones-contractuales-594761951101.europe-west1.run.app/api';
 
 const convertirUrlProxy = (url) => {
     if (!url) return null;

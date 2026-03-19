@@ -11,7 +11,7 @@ import imagenRoutes from '../Funcionalidad/source/routes/imagenRoutes.js';
 import guardarRoutes from '../Funcionalidad/source/routes/guardarRoutes.js';
 
 const main = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 8080;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
