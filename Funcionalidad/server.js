@@ -4,11 +4,11 @@ import 'dotenv/config';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-import analistaRoutes from '../Funcionalidad/source/routes/analistaRoutes.js';
-import aspiranteRoutes from '../Funcionalidad/source/routes/aspiranteRoutes.js';
-import actconRoutes from '../Funcionalidad/source/routes/actconroutes.js';
-import imagenRoutes from '../Funcionalidad/source/routes/imagenRoutes.js';
-import guardarRoutes from '../Funcionalidad/source/routes/guardarRoutes.js';
+import analistaRoutes from './source/routes/analistaRoutes.js';
+import aspiranteRoutes from './source/routes/aspiranteRoutes.js';
+import actconRoutes from './source/routes/actconroutes.js';
+import imagenRoutes from './source/routes/imagenRoutes.js';
+import guardarRoutes from './source/routes/guardarRoutes.js';
 
 const main = express();
 const port = process.env.PORT || 8080;
@@ -18,7 +18,7 @@ const __dirname = path.dirname(__filename);
 main.use(express.static(path.join(__dirname, 'public')));
 
 main.use(cors({
-    origin: ['http://127.0.0.1:5500', 'http://localhost:5173']
+    origin: '*'
 }));
 
 main.use(express.json({ limit: '50mb' }));
@@ -236,6 +236,6 @@ main.use('/api/actcon', actconRoutes);
 main.use('/api/imagen', imagenRoutes);
 main.use('/api/guardar', guardarRoutes);
 
-main.listen(port, () => {
+main.listen(port, '0.0.0.0', () => {
     console.log(`Servidor corriendo en puerto ${port}`);
 });
