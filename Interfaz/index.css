@@ -1,0 +1,188 @@
+body {
+    background: #e5e7eb;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 30px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.documento-pdf {
+    width: 750px;
+    background: white;
+    padding: 40px 45px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+}
+
+.header-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+    margin-bottom: 15px;
+}
+
+.header-table td {
+    border: 1px solid #000;
+    vertical-align: middle;
+    padding: 6px 4px;
+}
+
+.logo-cell {
+    width: 25%;
+    text-align: center;
+}
+
+.logo-cell img {
+    max-height: 50px;
+    max-width: 100%;
+}
+
+.title-cell {
+    width: 50%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.meta-cell {
+    width: 25%;
+    padding: 0;
+}
+
+.meta-cell div {
+    border-bottom: 1px solid #000;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 11px;
+}
+
+.meta-cell div:last-child {
+    border-bottom: none;
+}
+
+.contenido-acta {
+    margin-top: 20px;
+}
+
+.texto-principal {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    line-height: 1.8;
+    margin: 20px 0;
+}
+
+.texto-principal strong {
+    font-weight: bold;
+}
+
+.lista-puntos {
+    list-style: none;
+    margin: 25px 0 35px 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.lista-puntos li {
+    font-size: 15px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.punto {
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.firmas-container {
+    margin: 40px 0 30px 0;
+}
+
+.fila-firma {
+    margin-bottom: 30px;
+}
+
+.label-firma {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.select-analista {
+    display: block;
+    margin: 6px 0 8px 0;
+    width: 350px;
+    padding: 6px 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+}
+
+.canvas-firma {
+    width: 350px;
+    height: 70px;
+    border: 1px solid #ccc;
+    background: white;
+    display: block;
+    margin: 5px 0 0 0;
+    cursor: crosshair;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.fecha-container {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.fecha-label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.btn-guardar {
+    background: #e0e0e0;
+    border: 2px outset #ffffff;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    padding: 8px 25px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+    cursor: pointer;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-guardar:hover {
+    background: #c0c0c0;
+    border-color: #808080 #ffffff #ffffff #808080;
+}
+
+.btn-guardar:active {
+    border-color: #808080 #ffffff #ffffff #808080;
+    transform: translate(1px, 1px);
+    box-shadow: none;
+}
+
+.campo-vacio {
+    display: inline-block;
+    min-width: 200px;
+    border-bottom: 1px solid #000;
+    vertical-align: bottom;
+}

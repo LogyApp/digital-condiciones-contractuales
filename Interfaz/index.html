@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Acta de Conocimiento - LOG&SER</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+    <div class="documento-pdf">
+        <table class="header-table">
+            <tr>
+                <td class="logo-cell">
+                    <img src="https://storage.googleapis.com/logyser-recibo-public/logo.png" alt="Logo LOG&SER">
+                    alt="Logo LOG&SER">
+                </td>
+                <td class="title-cell">
+                    LOG&SER<br>|
+                    Apoyo Logístico y Operativo
+                </td>
+                <td class="meta-cell">
+                    <div>TH-R-026</div>
+                    <div>VERSION 1</div>
+                    <div>25/09/2025</div>
+                </td>
+            </tr>
+        </table>
+
+        <div class="contenido-acta">
+            <div class="texto-principal">
+                Yo,
+                <strong id="nombreColaborador">
+                    <span class="campo-vacio">________________________________</span>
+                </strong>,
+                identificado con CC No.
+                <strong id="identificacionColaborador">
+                    <span class="campo-vacio">________________________________</span>
+                </strong>,
+                declaro que antes de mi contratación he sido informado de manera clara sobre:
+            </div>
+
+            <ul class="lista-puntos">
+                <li><span class="punto">•</span> Funciones principales del cargo de Auxiliar Logístico.</li>
+                <li><span class="punto">•</span> Salario y forma de pago.</li>
+                <li><span class="punto">•</span> Horarios, turnos y condiciones de la labor.</li>
+                <li><span class="punto">•</span> Normas de seguridad y reglamento interno.</li>
+            </ul>
+
+            <div class="firmas-container">
+                <div class="fila-firma">
+                    <div class="label-firma">Firma Colaborador:</div>
+                    <canvas id="firmaColaborador" class="canvas-firma" width="350" height="70"></canvas>
+                </div>
+
+                <div class="fila-firma">
+                    <div class="label-firma">Firma Analista de Contratación:</div>
+                    <select id="selectAnalista" class="select-analista">
+                        <option value="">— Seleccione un analista —</option>
+                    </select>
+                    <canvas id="firmaAnalista" class="canvas-firma" width="350" height="70"></canvas>
+                </div>
+            </div>
+
+            <div class="footer-container">
+                <div class="fecha-container">
+                    <span class="fecha-label">Fecha:</span>
+                    <span>05 / 03 / 2026</span>
+                </div>
+                <button id="btnGuardar" class="btn-guardar">GUARDAR</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
